@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ReadySMS Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background: #FAFAFB;
+    color: #0F172A;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.011em;
+  }
+
+  /* ── Nav ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(250,250,251,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid #E2E8F0;
+    padding: 0 32px;
+  }
+  nav .inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 32px;
+    height: 56px;
+  }
+  nav .brand { font-weight: 700; font-size: 18px; }
+  nav .brand .ready {
+    background: linear-gradient(135deg, #2563EB, #06B6D4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  nav .brand .sms { color: #0F172A; }
+  nav a {
+    text-decoration: none; color: #64748B; font-size: 13px; font-weight: 500;
+    transition: color 0.15s;
+  }
+  nav a:hover { color: #0F172A; }
+
+  /* ── Wrap ── */
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 80px 0 64px;
+    text-align: center;
+  }
+  .hero h1 { font-size: 48px; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 16px; }
+  .hero h1 .ready {
+    background: linear-gradient(135deg, #2563EB, #06B6D4);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero h1 .sms { color: #0F172A; }
+  .hero p { color: #64748B; font-size: 17px; max-width: 520px; margin: 0 auto; line-height: 1.6; }
+  .hero .meta-bar {
+    margin-top: 24px; display: flex; justify-content: center; gap: 24px;
+    font-size: 12px; font-weight: 500; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.06em;
+  }
+
+  /* ── Section ── */
+  section { padding: 48px 0; }
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: #94A3B8; margin-bottom: 8px;
+  }
+  .section-title { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .section-desc { color: #64748B; font-size: 15px; margin-bottom: 32px; max-width: 600px; line-height: 1.55; }
+  .divider { border: none; border-top: 1px solid #E2E8F0; margin: 0; }
+
+  /* ── Logo Grid ── */
+  .logo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .logo-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .logo-card:hover { border-color: #CBD5E1; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+  .logo-card.dark { background: #0F172A; border-color: #1E293B; }
+  .logo-card.dark:hover { border-color: #334155; }
+  .logo-card .preview {
+    height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px;
+  }
+  .logo-card .preview svg { max-width: 100%; max-height: 100%; }
+  .logo-card .info {
+    padding: 16px 20px;
+    border-top: 1px solid #E2E8F0;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .logo-card.dark .info { border-top-color: #1E293B; }
+  .logo-card .info .label { font-size: 14px; font-weight: 600; }
+  .logo-card.dark .info .label { color: white; }
+  .logo-card .info .sub { font-size: 11px; color: #94A3B8; margin-top: 2px; font-family: 'Geist Mono', monospace; }
+  .logo-card .actions { display: flex; gap: 6px; }
+
+  /* ── Hero Logo Card ── */
+  .hero-logo {
+    grid-column: 1 / -1;
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 24px;
+    padding: 48px;
+    display: flex; align-items: center; gap: 48px;
+  }
+  @media (max-width: 700px) { .hero-logo { flex-direction: column; padding: 32px; } }
+  .hero-logo .preview-box {
+    width: 200px; height: 200px; flex-shrink: 0;
+    background: #F8FAFC; border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-logo .right { flex: 1; }
+  .hero-logo .badge {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 4px 10px; border-radius: 6px;
+    background: linear-gradient(135deg, #2563EB, #06B6D4); color: white;
+  }
+  .hero-logo h3 { font-size: 24px; font-weight: 700; margin: 12px 0 8px; letter-spacing: -0.02em; }
+  .hero-logo p { color: #64748B; font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+
+  /* ── Color Palette ── */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .color-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .color-card:hover { border-color: #CBD5E1; }
+  .color-swatch {
+    height: 100px;
+    display: flex; align-items: flex-end; padding: 12px;
+  }
+  .color-swatch.gradient {
+    background: linear-gradient(135deg, #2563EB, #06B6D4);
+  }
+  .color-info {
+    padding: 14px 16px;
+  }
+  .color-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+  .color-hex {
+    font-family: 'Geist Mono', monospace; font-size: 12px; color: #64748B;
+    cursor: pointer; transition: color 0.15s;
+  }
+  .color-hex:hover { color: #0F172A; }
+  .color-hex.copied { color: #10B981; }
+
+  /* ── Typography ── */
+  .type-showcase {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 48px;
+  }
+  .type-row {
+    display: flex; align-items: baseline; gap: 32px;
+    padding: 20px 0;
+    border-bottom: 1px solid #F1F5F9;
+  }
+  .type-row:last-child { border-bottom: none; }
+  .type-meta {
+    width: 140px; flex-shrink: 0;
+    font-size: 12px; color: #94A3B8;
+    font-family: 'Geist Mono', monospace;
+  }
+  .type-sample { flex: 1; }
+  .type-sample.w400 { font-weight: 400; }
+  .type-sample.w500 { font-weight: 500; }
+  .type-sample.w600 { font-weight: 600; }
+  .type-sample.w700 { font-weight: 700; }
+  .type-sample.w800 { font-weight: 800; }
+  .type-sample.sz48 { font-size: 48px; letter-spacing: -0.03em; }
+  .type-sample.sz32 { font-size: 32px; letter-spacing: -0.02em; }
+  .type-sample.sz24 { font-size: 24px; letter-spacing: -0.02em; }
+  .type-sample.sz16 { font-size: 16px; }
+  .type-sample.sz14 { font-size: 14px; }
+
+  /* ── Usage Rules ── */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .rule-card {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 16px;
+    padding: 24px;
+  }
+  .rule-card.do { border-left: 3px solid #10B981; }
+  .rule-card.dont { border-left: 3px solid #EF4444; }
+  .rule-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .rule-card.do .rule-label { color: #10B981; }
+  .rule-card.dont .rule-label { color: #EF4444; }
+  .rule-card p { font-size: 14px; color: #475569; line-height: 1.55; }
+
+  /* ── Buttons ── */
+  .btn {
+    padding: 7px 14px;
+    border-radius: 8px;
+    border: 1px solid #E2E8F0;
+    background: white;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn:hover { background: #F8FAFC; border-color: #CBD5E1; color: #0F172A; }
+  .btn.copied { background: #DCFCE7; border-color: #86EFAC; color: #15803D; }
+  .dark .btn { background: transparent; border-color: #1E293B; color: #94A3B8; }
+  .dark .btn:hover { background: #0F172A; border-color: #334155; color: white; }
+  .btn-gradient {
+    padding: 10px 24px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #2563EB, #06B6D4);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .btn-gradient:hover { opacity: 0.9; }
+
+  /* ── CTA Section ── */
+  .cta-section {
+    background: white;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+  }
+  .cta-card { display: flex; flex-direction: column; gap: 8px; }
+  .cta-card .preview-area {
+    height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ── Footer ── */
+  footer {
+    padding: 48px 0; text-align: center;
+    color: #94A3B8; font-size: 13px;
+  }
+  footer a { color: #64748B; text-decoration: none; }
+  footer a:hover { color: #0F172A; }
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="inner">
+    <span class="brand"><span class="ready">Ready</span><span class="sms">SMS</span></span>
+    <a href="#logos">Logos</a>
+    <a href="#colors">Colors</a>
+    <a href="#typography">Typography</a>
+    <a href="#components">Components</a>
+    <a href="#guidelines">Guidelines</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<!-- Hero -->
+<div class="hero">
+  <h1><span class="ready">Ready</span><span class="sms">SMS</span> Brand Kit</h1>
+  <p>Everything you need to represent ReadySMS consistently across web, mobile, print, and partner materials.</p>
+  <div class="meta-bar">
+    <span>Updated June 2026</span>
+    <span>Plus Jakarta Sans</span>
+    <span>Blue &rarr; Cyan</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- LOGOS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<section id="logos">
+  <p class="section-label">01</p>
+  <h2 class="section-title">Logos</h2>
+  <p class="section-desc">Primary logo variants for light and dark backgrounds. Click Copy to grab SVG source, or Download to save as a file.</p>
+
+  <div class="logo-grid">
+
+    <!-- Hero: Horizontal Logo -->
+    <div class="hero-logo">
+      <div class="preview-box">
+        <svg id="svg-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="180">
+          <defs>
+            <linearGradient id="hIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+            <linearGradient id="hReadyGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+          </defs>
+          <rect x="5" y="5" width="90" height="90" rx="20" ry="20" fill="url(#hIconBg)"/>
+          <path d="M 25 28 H 75 a 6 6 0 0 1 6 6 V 58 a 6 6 0 0 1 -6 6 H 40 L 25 76 Z" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="115" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="url(#hReadyGrad)" letter-spacing="-1.2">Ready</text>
+          <text x="310" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="#0F172A" letter-spacing="-1.2">SMS</text>
+        </svg>
+      </div>
+      <div class="right">
+        <span class="badge">Primary</span>
+        <h3>Horizontal — Light</h3>
+        <p>Icon + wordmark on light backgrounds. Use this for most applications: website headers, docs, slide decks.</p>
+        <div class="actions" style="display:flex;gap:8px;">
+          <button class="btn" onclick="copyFile('logo-horizontal.svg', this)">Copy SVG</button>
+          <a class="btn" href="logo-horizontal.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Horizontal Dark -->
+    <div class="logo-card dark">
+      <div class="preview">
+        <svg id="svg-horizontal-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="220">
+          <defs>
+            <linearGradient id="hdIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+            <linearGradient id="hdReadyGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
+          </defs>
+          <rect x="5" y="5" width="90" height="90" rx="20" ry="20" fill="url(#hdIconBg)"/>
+          <path d="M 25 28 H 75 a 6 6 0 0 1 6 6 V 58 a 6 6 0 0 1 -6 6 H 40 L 25 76 Z" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="115" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="url(#hdReadyGrad)" letter-spacing="-1.2">Ready</text>
+          <text x="310" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="#FFFFFF" letter-spacing="-1.2">SMS</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">Horizontal — Dark</div>
+          <div class="sub">For dark backgrounds</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-horizontal-dark.svg', this)">Copy</button>
+          <a class="btn" href="logo-horizontal-dark.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wordmark Light -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg id="svg-wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" width="240">
+          <defs><linearGradient id="wmGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <text x="0" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="url(#wmGrad)" letter-spacing="-1.5">Ready</text>
+          <text x="195" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="#0F172A" letter-spacing="-1.5">SMS</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">Wordmark — Light</div>
+          <div class="sub">Text only, no icon</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-wordmark.svg', this)">Copy</button>
+          <a class="btn" href="logo-wordmark.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wordmark Dark -->
+    <div class="logo-card dark">
+      <div class="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" width="240">
+          <defs><linearGradient id="wmGradD" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <text x="0" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="url(#wmGradD)" letter-spacing="-1.5">Ready</text>
+          <text x="195" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="#FFFFFF" letter-spacing="-1.5">SMS</text>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">Wordmark — Dark</div>
+          <div class="sub">Text only, dark bg</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-wordmark-dark.svg', this)">Copy</button>
+          <a class="btn" href="logo-wordmark-dark.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Icon: Chat Bubble -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg id="svg-icon-chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
+          <defs><linearGradient id="icBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="512" height="512" rx="115" ry="115" fill="url(#icBg)"/>
+          <path d="M 130 145 H 382 a 25 25 0 0 1 25 25 V 295 a 25 25 0 0 1 -25 25 H 195 L 130 380 Z" fill="none" stroke="white" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">App Icon — Chat</div>
+          <div class="sub">Primary app icon</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-icon-chat.svg', this)">Copy</button>
+          <a class="btn" href="logo-icon-chat.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Icon: Dialer -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
+          <defs><linearGradient id="dlBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="512" height="512" rx="115" ry="115" fill="url(#dlBg)"/>
+          <path d="M168 132c12-4 36 4 52 20l36 36c12 12 16 28 8 40l-20 28c-4 6-2 14 4 20l64 64c6 6 14 8 20 4l28-20c12-8 28-4 40 8l36 36c16 16 24 40 20 52-8 28-40 56-80 60-56 4-124-28-176-80s-84-120-80-176c4-40 32-72 60-80z" fill="none" stroke="white" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">App Icon — Dialer</div>
+          <div class="sub">Phone / voice product</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-icon-dialer.svg', this)">Copy</button>
+          <a class="btn" href="logo-icon-dialer.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Icon: R Mark (Company Logo) -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
+          <defs><linearGradient id="rBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="512" height="512" rx="115" ry="115" fill="url(#rBg)"/>
+          <g transform="translate(116, 36) scale(0.42)">
+            <path d="M28 745L132 0H407Q479 0 533 25.5Q587 51 617.5 101Q648 151 648 225Q648 278 629.5 323Q611 368 576.5 401Q542 434 493 453L618 745H453L314 413L407 475H221L183 745ZM240 340H373Q408 340 434.5 325Q461 310 476.5 284Q492 258 492 225Q492 184 465.5 159.5Q439 135 394 135H268Z" fill="white"/>
+          </g>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">App Icon — R</div>
+          <div class="sub">Company logo mark</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-icon-r.svg', this)">Copy</button>
+          <a class="btn" href="logo-icon-r.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Favicon -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="8 -20 660 785" width="80">
+          <defs><linearGradient id="fvG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <path d="M28 745L132 0H407Q479 0 533 25.5Q587 51 617.5 101Q648 151 648 225Q648 278 629.5 323Q611 368 576.5 401Q542 434 493 453L618 745H453L314 413L407 475H221L183 745ZM240 340H373Q408 340 434.5 325Q461 310 476.5 284Q492 258 492 225Q492 184 465.5 159.5Q439 135 394 135H268Z" fill="url(#fvG)"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">Favicon — Serif R</div>
+          <div class="sub">Browser tab icon</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('favicon.svg', this)">Copy</button>
+          <a class="btn" href="favicon.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- COLORS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<section id="colors">
+  <p class="section-label">02</p>
+  <h2 class="section-title">Color Palette</h2>
+  <p class="section-desc">The core brand palette. Click any hex value to copy it to your clipboard.</p>
+
+  <h3 style="font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#94A3B8;margin-bottom:16px;">Primary</h3>
+  <div class="color-grid" style="margin-bottom:32px;">
+
+    <!-- Gradient -->
+    <div class="color-card">
+      <div class="color-swatch gradient"></div>
+      <div class="color-info">
+        <div class="color-name">Brand Gradient</div>
+        <div class="color-hex" onclick="copyHex('#2563EB → #06B6D4', this)">#2563EB → #06B6D4</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">135deg · Primary CTAs, "Ready" text</div>
+      </div>
+    </div>
+
+    <!-- Blue -->
+    <div class="color-card">
+      <div class="color-swatch" style="background:#2563EB;"></div>
+      <div class="color-info">
+        <div class="color-name">Blue 600</div>
+        <div class="color-hex" onclick="copyHex('#2563EB', this)">#2563EB</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Gradient start · Links</div>
+      </div>
+    </div>
+
+    <!-- Cyan -->
+    <div class="color-card">
+      <div class="color-swatch" style="background:#06B6D4;"></div>
+      <div class="color-info">
+        <div class="color-name">Cyan 500</div>
+        <div class="color-hex" onclick="copyHex('#06B6D4', this)">#06B6D4</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Gradient end · Accents</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 style="font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#94A3B8;margin-bottom:16px;">Neutrals</h3>
+  <div class="color-grid" style="margin-bottom:32px;">
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#0F172A;"></div>
+      <div class="color-info">
+        <div class="color-name">Slate 900</div>
+        <div class="color-hex" onclick="copyHex('#0F172A', this)">#0F172A</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Dark bg · "SMS" text (light mode)</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#1E293B;"></div>
+      <div class="color-info">
+        <div class="color-name">Slate 800</div>
+        <div class="color-hex" onclick="copyHex('#1E293B', this)">#1E293B</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Card borders (dark mode)</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#475569;"></div>
+      <div class="color-info">
+        <div class="color-name">Slate 600</div>
+        <div class="color-hex" onclick="copyHex('#475569', this)">#475569</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Body text</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#64748B;"></div>
+      <div class="color-info">
+        <div class="color-name">Slate 500</div>
+        <div class="color-hex" onclick="copyHex('#64748B', this)">#64748B</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Subtitles · Descriptions</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#94A3B8;"></div>
+      <div class="color-info">
+        <div class="color-name">Slate 400</div>
+        <div class="color-hex" onclick="copyHex('#94A3B8', this)">#94A3B8</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Hints · Labels</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#E2E8F0;"></div>
+      <div class="color-info">
+        <div class="color-name">Slate 200</div>
+        <div class="color-hex" onclick="copyHex('#E2E8F0', this)">#E2E8F0</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Borders · Dividers</div>
+      </div>
+    </div>
+
+  </div>
+
+  <h3 style="font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#94A3B8;margin-bottom:16px;">Semantic</h3>
+  <div class="color-grid">
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#10B981;"></div>
+      <div class="color-info">
+        <div class="color-name">Trust Green</div>
+        <div class="color-hex" onclick="copyHex('#10B981', this)">#10B981</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Checkmarks · Success states</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#EF4444;"></div>
+      <div class="color-info">
+        <div class="color-name">Error Red</div>
+        <div class="color-hex" onclick="copyHex('#EF4444', this)">#EF4444</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Errors · Destructive actions</div>
+      </div>
+    </div>
+
+    <div class="color-card">
+      <div class="color-swatch" style="background:#F59E0B;"></div>
+      <div class="color-info">
+        <div class="color-name">Warning Amber</div>
+        <div class="color-hex" onclick="copyHex('#F59E0B', this)">#F59E0B</div>
+        <div style="font-size:11px;color:#94A3B8;margin-top:4px;">Warnings · Attention</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- TYPOGRAPHY -->
+<!-- ════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<section id="typography">
+  <p class="section-label">03</p>
+  <h2 class="section-title">Typography</h2>
+  <p class="section-desc">Plus Jakarta Sans is the brand typeface. Bold 700 for wordmarks. ExtraBold 800 for the R icon mark. No italics in branding.</p>
+
+  <div class="type-showcase">
+    <div class="type-row">
+      <div class="type-meta">ExtraBold 800<br>48px</div>
+      <div class="type-sample w800 sz48"><span style="background:linear-gradient(135deg,#2563EB,#06B6D4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ready</span>SMS</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Bold 700<br>32px</div>
+      <div class="type-sample w700 sz32">Business texting that just works.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">SemiBold 600<br>24px</div>
+      <div class="type-sample w600 sz24">Section heading</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Medium 500<br>16px</div>
+      <div class="type-sample w500 sz16">Navigation items, button labels, and card titles use medium weight at the base size.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Regular 400<br>14px</div>
+      <div class="type-sample w400 sz14" style="color:#475569;">Body text and descriptions use regular weight. Keep line height around 1.55 for comfortable reading at smaller sizes.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- COMPONENTS -->
+<!-- ════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<section id="components">
+  <p class="section-label">04</p>
+  <h2 class="section-title">UI Components</h2>
+  <p class="section-desc">Standard patterns for buttons, badges, and inputs across the product.</p>
+
+  <div class="cta-section">
+    <!-- Primary Button -->
+    <div class="cta-card">
+      <div class="color-name">Primary Button</div>
+      <div class="preview-area" style="background:#F8FAFC;border-radius:12px;">
+        <button class="btn-gradient">Get Started</button>
+      </div>
+      <div style="font-size:12px;color:#64748B;font-family:'Geist Mono',monospace;">
+        background: linear-gradient(135deg, #2563EB, #06B6D4)<br>
+        color: white · border-radius: 10-14px · font-weight: 600
+      </div>
+    </div>
+
+    <!-- Secondary Button -->
+    <div class="cta-card">
+      <div class="color-name">Secondary Button</div>
+      <div class="preview-area" style="background:#F8FAFC;border-radius:12px;">
+        <button class="btn" style="padding:10px 24px;font-size:14px;font-weight:600;border-radius:10px;">Learn More</button>
+      </div>
+      <div style="font-size:12px;color:#64748B;font-family:'Geist Mono',monospace;">
+        background: white · border: 1px solid #E2E8F0<br>
+        color: #475569 · border-radius: 10px
+      </div>
+    </div>
+
+    <!-- Badge -->
+    <div class="cta-card">
+      <div class="color-name">Badge / Pill</div>
+      <div class="preview-area" style="background:#F8FAFC;border-radius:12px;gap:8px;">
+        <span style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:4px 12px;border-radius:20px;background:linear-gradient(135deg,#2563EB,#06B6D4);color:white;">Pro</span>
+        <span style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:4px 12px;border-radius:20px;background:#DCFCE7;color:#15803D;">Active</span>
+        <span style="display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:4px 12px;border-radius:20px;background:#FEF3C7;color:#92400E;">Pending</span>
+      </div>
+      <div style="font-size:12px;color:#64748B;font-family:'Geist Mono',monospace;">
+        font-size: 11px · font-weight: 600<br>
+        padding: 4px 12px · border-radius: 20px
+      </div>
+    </div>
+
+    <!-- Card Style -->
+    <div class="cta-card">
+      <div class="color-name">Card</div>
+      <div class="preview-area" style="background:#F8FAFC;border-radius:12px;">
+        <div style="background:white;border:1px solid #E2E8F0;border-radius:14px;padding:16px 20px;width:180px;">
+          <div style="font-size:13px;font-weight:600;">Messages Sent</div>
+          <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;margin-top:4px;">12,847</div>
+          <div style="font-size:11px;color:#10B981;margin-top:4px;">+23% this week</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#64748B;font-family:'Geist Mono',monospace;">
+        background: white · border: 1px solid #E2E8F0<br>
+        border-radius: 16-20px · padding: 24px
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- GUIDELINES -->
+<!-- ════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<section id="guidelines">
+  <p class="section-label">05</p>
+  <h2 class="section-title">Usage Guidelines</h2>
+  <p class="section-desc">Quick reference for correct and incorrect brand usage.</p>
+
+  <div class="rules-grid">
+    <div class="rule-card do">
+      <div class="rule-label">Do</div>
+      <p>Use the gradient (blue-to-cyan) on "Ready" and keep "SMS" in dark or white depending on background.</p>
+    </div>
+    <div class="rule-card do">
+      <div class="rule-label">Do</div>
+      <p>Maintain clear space equal to the height of the "R" around the logo on all sides.</p>
+    </div>
+    <div class="rule-card do">
+      <div class="rule-label">Do</div>
+      <p>Use Plus Jakarta Sans 700 (Bold) for the wordmark and 800 (ExtraBold) for standalone R marks.</p>
+    </div>
+    <div class="rule-card do">
+      <div class="rule-label">Do</div>
+      <p>Use the chat bubble icon for app stores, social avatars, and anywhere a square icon is needed.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="rule-label">Don't</div>
+      <p>Don't italicize "Ready" or any part of the wordmark. The italic treatment has been retired.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="rule-label">Don't</div>
+      <p>Don't use the gradient on "SMS" — it always stays dark (#0F172A) or white.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="rule-label">Don't</div>
+      <p>Don't place the logo on busy backgrounds without a container or overlay for legibility.</p>
+    </div>
+    <div class="rule-card dont">
+      <div class="rule-label">Don't</div>
+      <p>Don't stretch, rotate, or add effects (drop shadows, outlines, glows) to the logo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════ -->
+<!-- QUICK REF -->
+<!-- ════════════════════════════════════════════════════════ -->
+<hr class="divider">
+<section>
+  <p class="section-label">06</p>
+  <h2 class="section-title">Quick Reference</h2>
+  <p class="section-desc">Copy-pasteable specs for developers and designers.</p>
+
+  <div class="type-showcase" style="font-size:13px;">
+    <div class="type-row">
+      <div class="type-meta">Font</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">Plus Jakarta Sans · 400/500/600/700/800</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Gradient CSS</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">linear-gradient(135deg, #2563EB, #06B6D4)</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Dark background</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">#0F172A (slate-900)</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Border</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">1px solid #E2E8F0</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Card radius</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">16-20px (cards) · 10-14px (buttons) · ~20% (app icon)</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Tagline</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">Business texting that just works.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta">Legal</div>
+      <div class="type-sample w400 sz14" style="font-family:'Geist Mono',monospace;color:#475569;">readysms.io</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>ReadySMS Brand Kit &middot; <a href="https://readysms.io">readysms.io</a></p>
+</footer>
+
+<script>
+async function copyFile(filename, btn) {
+  try {
+    const resp = await fetch(filename);
+    const text = await resp.text();
+    await navigator.clipboard.writeText(text);
+    flashCopied(btn);
+  } catch (e) {
+    // Fallback: copy the inline SVG if fetch fails
+    const card = btn.closest('.logo-card, .hero-logo');
+    const svg = card?.querySelector('svg');
+    if (svg) {
+      await navigator.clipboard.writeText(svg.outerHTML);
+      flashCopied(btn);
+    }
+  }
+}
+
+function copyHex(hex, el) {
+  navigator.clipboard.writeText(hex).then(() => {
+    const orig = el.textContent;
+    el.classList.add('copied');
+    el.textContent = 'Copied!';
+    setTimeout(() => {
+      el.classList.remove('copied');
+      el.textContent = orig;
+    }, 1200);
+  });
+}
+
+function flashCopied(btn) {
+  const orig = btn.textContent;
+  btn.classList.add('copied');
+  btn.textContent = 'Copied!';
+  setTimeout(() => {
+    btn.classList.remove('copied');
+    btn.textContent = orig;
+  }, 1200);
+}
+</script>
+</body>
+</html>
