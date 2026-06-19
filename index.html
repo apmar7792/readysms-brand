@@ -309,73 +309,21 @@
 
   <div class="logo-grid">
 
-    <!-- Hero: Horizontal Logo -->
+    <!-- Hero: Wordmark (Primary Logo) -->
     <div class="hero-logo">
       <div class="preview-box">
-        <svg id="svg-horizontal" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="180">
-          <defs>
-            <linearGradient id="hIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
-            <linearGradient id="hReadyGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
-          </defs>
-          <rect x="5" y="5" width="90" height="90" rx="20" ry="20" fill="url(#hIconBg)"/>
-          <path d="M 25 28 H 75 a 6 6 0 0 1 6 6 V 58 a 6 6 0 0 1 -6 6 H 40 L 25 76 Z" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-          <text x="115" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="url(#hReadyGrad)" letter-spacing="-1.2">Ready</text>
-          <text x="310" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="#0F172A" letter-spacing="-1.2">SMS</text>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="200">
+          <defs><linearGradient id="hlGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <text x="0" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="url(#hlGrad)" letter-spacing="-1.5">Ready</text>
+          <text x="195" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="#0F172A" letter-spacing="-1.5">SMS</text>
         </svg>
       </div>
       <div class="right">
         <span class="badge">Primary</span>
-        <h3>Horizontal — Light</h3>
-        <p>Icon + wordmark on light backgrounds. Use this for most applications: website headers, docs, slide decks.</p>
+        <h3>Wordmark — Light</h3>
+        <p>The ReadySMS logo is a plain wordmark. "Ready" in gradient, "SMS" in dark. Use for headers, docs, decks, and anywhere you need the full brand name.</p>
         <div class="actions" style="display:flex;gap:8px;">
-          <button class="btn" onclick="copyFile('logo-horizontal.svg', this)">Copy SVG</button>
-          <a class="btn" href="logo-horizontal.svg" download style="text-decoration:none;">Download</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Horizontal Dark -->
-    <div class="logo-card dark">
-      <div class="preview">
-        <svg id="svg-horizontal-dark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 100" width="220">
-          <defs>
-            <linearGradient id="hdIconBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
-            <linearGradient id="hdReadyGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient>
-          </defs>
-          <rect x="5" y="5" width="90" height="90" rx="20" ry="20" fill="url(#hdIconBg)"/>
-          <path d="M 25 28 H 75 a 6 6 0 0 1 6 6 V 58 a 6 6 0 0 1 -6 6 H 40 L 25 76 Z" fill="none" stroke="white" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-          <text x="115" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="url(#hdReadyGrad)" letter-spacing="-1.2">Ready</text>
-          <text x="310" y="70" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="54" fill="#FFFFFF" letter-spacing="-1.2">SMS</text>
-        </svg>
-      </div>
-      <div class="info">
-        <div>
-          <div class="label">Horizontal — Dark</div>
-          <div class="sub">For dark backgrounds</div>
-        </div>
-        <div class="actions">
-          <button class="btn" onclick="copyFile('logo-horizontal-dark.svg', this)">Copy</button>
-          <a class="btn" href="logo-horizontal-dark.svg" download style="text-decoration:none;">Download</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Wordmark Light -->
-    <div class="logo-card">
-      <div class="preview">
-        <svg id="svg-wordmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" width="240">
-          <defs><linearGradient id="wmGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
-          <text x="0" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="url(#wmGrad)" letter-spacing="-1.5">Ready</text>
-          <text x="195" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="#0F172A" letter-spacing="-1.5">SMS</text>
-        </svg>
-      </div>
-      <div class="info">
-        <div>
-          <div class="label">Wordmark — Light</div>
-          <div class="sub">Text only, no icon</div>
-        </div>
-        <div class="actions">
-          <button class="btn" onclick="copyFile('logo-wordmark.svg', this)">Copy</button>
+          <button class="btn" onclick="copyFile('logo-wordmark.svg', this)">Copy SVG</button>
           <a class="btn" href="logo-wordmark.svg" download style="text-decoration:none;">Download</a>
         </div>
       </div>
@@ -384,7 +332,7 @@
     <!-- Wordmark Dark -->
     <div class="logo-card dark">
       <div class="preview">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 80" width="240">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="240">
           <defs><linearGradient id="wmGradD" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
           <text x="0" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="url(#wmGradD)" letter-spacing="-1.5">Ready</text>
           <text x="195" y="62" font-family="'Plus Jakarta Sans', system-ui" font-weight="700" font-size="64" fill="#FFFFFF" letter-spacing="-1.5">SMS</text>
@@ -393,7 +341,7 @@
       <div class="info">
         <div>
           <div class="label">Wordmark — Dark</div>
-          <div class="sub">Text only, dark bg</div>
+          <div class="sub">For dark backgrounds</div>
         </div>
         <div class="actions">
           <button class="btn" onclick="copyFile('logo-wordmark-dark.svg', this)">Copy</button>
@@ -402,63 +350,21 @@
       </div>
     </div>
 
-    <!-- App Icon: Chat Bubble -->
-    <div class="logo-card">
-      <div class="preview">
-        <svg id="svg-icon-chat" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
-          <defs><linearGradient id="icBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
-          <rect width="512" height="512" rx="115" ry="115" fill="url(#icBg)"/>
-          <path d="M 130 145 H 382 a 25 25 0 0 1 25 25 V 295 a 25 25 0 0 1 -25 25 H 195 L 130 380 Z" fill="none" stroke="white" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="info">
-        <div>
-          <div class="label">App Icon — Chat</div>
-          <div class="sub">Primary app icon</div>
-        </div>
-        <div class="actions">
-          <button class="btn" onclick="copyFile('logo-icon-chat.svg', this)">Copy</button>
-          <a class="btn" href="logo-icon-chat.svg" download style="text-decoration:none;">Download</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- App Icon: Dialer -->
-    <div class="logo-card">
-      <div class="preview">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
-          <defs><linearGradient id="dlBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
-          <rect width="512" height="512" rx="115" ry="115" fill="url(#dlBg)"/>
-          <path d="M168 132c12-4 36 4 52 20l36 36c12 12 16 28 8 40l-20 28c-4 6-2 14 4 20l64 64c6 6 14 8 20 4l28-20c12-8 28-4 40 8l36 36c16 16 24 40 20 52-8 28-40 56-80 60-56 4-124-28-176-80s-84-120-80-176c4-40 32-72 60-80z" fill="none" stroke="white" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <div class="info">
-        <div>
-          <div class="label">App Icon — Dialer</div>
-          <div class="sub">Phone / voice product</div>
-        </div>
-        <div class="actions">
-          <button class="btn" onclick="copyFile('logo-icon-dialer.svg', this)">Copy</button>
-          <a class="btn" href="logo-icon-dialer.svg" download style="text-decoration:none;">Download</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- App Icon: R Mark (Company Logo) -->
+    <!-- R Mark on gradient bg — profile pic / icon -->
     <div class="logo-card">
       <div class="preview">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
           <defs><linearGradient id="rBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
           <rect width="512" height="512" rx="115" ry="115" fill="url(#rBg)"/>
-          <g transform="translate(116, 36) scale(0.42)">
+          <g transform="translate(130, 48) scale(0.38)">
             <path d="M28 745L132 0H407Q479 0 533 25.5Q587 51 617.5 101Q648 151 648 225Q648 278 629.5 323Q611 368 576.5 401Q542 434 493 453L618 745H453L314 413L407 475H221L183 745ZM240 340H373Q408 340 434.5 325Q461 310 476.5 284Q492 258 492 225Q492 184 465.5 159.5Q439 135 394 135H268Z" fill="white"/>
           </g>
         </svg>
       </div>
       <div class="info">
         <div>
-          <div class="label">App Icon — R</div>
-          <div class="sub">Company logo mark</div>
+          <div class="label">R Mark — Profile</div>
+          <div class="sub">Avatars, app icons, social</div>
         </div>
         <div class="actions">
           <button class="btn" onclick="copyFile('logo-icon-r.svg', this)">Copy</button>
@@ -467,7 +373,7 @@
       </div>
     </div>
 
-    <!-- Favicon -->
+    <!-- R Mark standalone gradient — favicon / transparent -->
     <div class="logo-card">
       <div class="preview">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="8 -20 660 785" width="80">
@@ -477,12 +383,61 @@
       </div>
       <div class="info">
         <div>
-          <div class="label">Favicon — Serif R</div>
-          <div class="sub">Browser tab icon</div>
+          <div class="label">R Mark — Standalone</div>
+          <div class="sub">Favicon, transparent bg use</div>
         </div>
         <div class="actions">
           <button class="btn" onclick="copyFile('favicon.svg', this)">Copy</button>
           <a class="btn" href="favicon.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Product Icons -->
+  <h3 style="font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#94A3B8;margin:32px 0 16px;">Product Icons</h3>
+  <p style="color:#64748B;font-size:14px;margin-bottom:20px;">These are product-specific icons, not the company logo. Use them when referring to a specific ReadySMS product.</p>
+  <div class="logo-grid">
+
+    <!-- SMS Product Icon -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
+          <defs><linearGradient id="icBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="512" height="512" rx="115" ry="115" fill="url(#icBg)"/>
+          <path d="M 130 145 H 382 a 25 25 0 0 1 25 25 V 295 a 25 25 0 0 1 -25 25 H 195 L 130 380 Z" fill="none" stroke="white" stroke-width="24" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">SMS Product</div>
+          <div class="sub">Texting / messaging</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-icon-chat.svg', this)">Copy</button>
+          <a class="btn" href="logo-icon-chat.svg" download style="text-decoration:none;">Download</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dialer Product Icon -->
+    <div class="logo-card">
+      <div class="preview">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="120">
+          <defs><linearGradient id="dlBg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563EB"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="512" height="512" rx="115" ry="115" fill="url(#dlBg)"/>
+          <path d="M200.8 311.2c28.4 28.4 60.8 50.4 94.4 64.8 4.8 2 10.4 0.8 14-2.8l32-32c5.6-5.6 14-6.8 21.2-3.2l56 28c8 4 12 13.2 9.6 21.6-8 28-28 50.4-54 60.4-8 3.2-16.8 4-25.2 2-48-10.4-96-38-136-78s-67.6-88-78-136c-2-8.4-1.2-17.2 2-25.2 10-26 32.4-46 60.4-54 8.4-2.4 17.6 1.6 21.6 9.6l28 56c3.6 7.2 2.4 15.6-3.2 21.2l-32 32c-3.6 3.6-4.8 9.2-2.8 14 14.4 33.6 36.4 66 64.8 94.4z" fill="none" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div>
+          <div class="label">Dialer Product</div>
+          <div class="sub">Phone / voice</div>
+        </div>
+        <div class="actions">
+          <button class="btn" onclick="copyFile('logo-icon-dialer.svg', this)">Copy</button>
+          <a class="btn" href="logo-icon-dialer.svg" download style="text-decoration:none;">Download</a>
         </div>
       </div>
     </div>
